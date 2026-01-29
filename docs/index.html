@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Asset Management System</title>
+  <link rel="icon" type="image/png" href="../img/it_logo.png">
+  <meta http-equiv="refresh" content="0; url=login/index.html">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #f9fafb 0%, #eff6ff 100%);
+    }
+
+    .loading {
+      text-align: center;
+      color: #3b82f6;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #dbeafe;
+      border-top-color: #3b82f6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading">
+    <div class="spinner"></div>
+    <p>กำลังโหลด...</p>
+  </div>
+  <script>
+    // Fallback redirect if meta refresh doesn't work
+    setTimeout(() => {
+      window.location.href = 'login/index.html';
+    }, 100);
+  </script>
+</body>
+
+</html>
