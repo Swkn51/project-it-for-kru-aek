@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>โปรไฟล์ผู้ใช้ | IT Asset Management</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animation.css">
+</head>
+
+<body>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <img src="../img/it_logo.png" alt="Logo" class="sidebar-logo">
+      <span class="sidebar-title">IT Asset</span>
+    </div>
+    <div class="menu">
+      <div class="menu-item" onclick="goPage('search.html')">
+        <i class="ri-search-line"></i>
+        <span>ค้นหาวัสดุ</span>
+      </div>
+      <div class="menu-item" onclick="goPage('my-assets.html')">
+        <i class="ri-computer-line"></i>
+        <span>อุปกรณ์ที่ดูแล</span>
+      </div>
+      <div class="menu-item" onclick="goPage('transfer.html')">
+        <i class="ri-arrow-left-right-line"></i>
+        <span>โอนย้าย</span>
+      </div>
+      <div class="menu-item active" onclick="goPage('profile.html')">
+        <i class="ri-user-line"></i>
+        <span>โปรไฟล์</span>
+      </div>
+      <div class="menu-item" onclick="goPage('about.html')">
+        <i class="ri-information-line"></i>
+        <span>เกี่ยวกับ</span>
+      </div>
+    </div>
+    <div class="logout-btn" onclick="logout()">
+      <i class="ri-logout-box-line"></i>
+      <span>ออกจากระบบ</span>
+    </div>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <button class="logo-btn" onclick="openSidebar()">
+      <img src="../img/it_logo.png" alt="Menu">
+    </button>
+    <div class="top-right">
+      <div id="userInfo" class="user-name"></div>
+      <div id="userAvatar" class="profile-placeholder"></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 class="page-title animate-fadeIn">
+      <i class="ri-user-settings-line"></i>
+      โปรไฟล์ผู้ใช้
+    </h1>
+
+    <div class="card animate-fadeInUp">
+      <div class="profile-section">
+        <div style="text-align: center;">
+          <div id="avatar" class="avatar avatar-lg" onclick="pickImage()"></div>
+          <input type="file" id="fileInput" hidden accept="image/*">
+          <p style="margin-top: var(--space-3); font-size: var(--font-size-sm); color: var(--gray-500);">
+            <i class="ri-camera-line"></i> คลิกเพื่ออัปโหลดรูป
+          </p>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label class="form-label">Username</label>
+            <input id="username" class="form-input" placeholder="อย่างน้อย 4 ตัวอักษร">
+            <small style="color: var(--gray-500); font-size: 12px;">ต้องมีอย่างน้อย 4 ตัวอักษร</small>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">ชื่อ - นามสกุล</label>
+            <input id="fullname" class="form-input" disabled>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">รหัสผ่านใหม่</label>
+            <input id="newPassword" type="password" class="form-input" placeholder="เว้นว่างถ้าไม่ต้องการเปลี่ยน">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">ยืนยันรหัสผ่านใหม่</label>
+            <input id="confirmPassword" type="password" class="form-input" placeholder="พิมพ์รหัสผ่านใหม่อีกครั้ง">
+          </div>
+
+          <button class="btn btn-primary" onclick="saveProfile()">
+            <i class="ri-save-line"></i>
+            บันทึกข้อมูล
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/common.js"></script>
+  <script src="profile.js"></script>
+</body>
+
+</html>
